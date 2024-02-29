@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<head>
+<head>
 <link rel="shortcut icon" href="https://github.com/cy73/tv.github.io/assets/160321595/6dedb263-dd2a-4a24-ba80-4740ec795ffc" type="image/x-icon">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
@@ -24,9 +24,20 @@ body{
 	height:auto;
 	width: 100%;
 }
+#video{
+        width: 100%;
+        position: fixed;
+        top: 0px;
+		
+        left: 0px;
+	height:202px;
+	float: left;
+	background: black;
+	/*position: relative;   去掉这句将会使得video优先级失效*/
+	z-index: 1;
+}
 
-
-aside{margin-top: 1vh;
+aside{margin-top: 31vh;
 	float: left;
 	height: auto;
 	width: 100%;
@@ -54,9 +65,41 @@ aside ul li{
 
 aside ul li:hover{
 	
-	background-color: lightgray;/*lightgray*/
+	background-color: ;/*lightgray*/
 	color: #FF00BF;/*lightcoral*/
 	font-weight: bold;
+}
+
+aside #playList-hidden {
+	position: absolute;
+	bottom: 250px;
+	right: 0;
+	width:20px ;
+	height: 32px;
+	background: lightgoldenrodyellow;
+	font-size: 16px;
+	font-weight: bold;
+	border-top-left-radius:10px ;
+	border-bottom-left-radius:10px ;
+	opacity: 0.5;
+	z-index: 10000;
+}
+
+#cans #playList-show1{
+	margin-top: 230px;
+	width:20px ;
+	height: 32px;
+	background:lightgoldenrodyellow;
+	font-size: 16px;
+	font-weight: bold;
+	border-top-right-radius:10px ;
+	border-bottom-right-radius:10px ;
+	opacity: 1;
+	visibility: hidden;
+}
+
+#cans #playList-show1:hover,aside #playList-hidden:hover{
+	opacity: 0.7;
 }
 .select{
 	color: red;/*lightcoral*/
@@ -65,331 +108,423 @@ aside ul li:hover{
 </head>
 <body>	
 	<div id="cans">
+		<video controls="controls" id="video"　src="" poster=""  height="auto" width="100%"></video>
 		<aside id="playList">
 			<header><h2>央视51个频道</h2></header>				
 			<ul>
-			<li> <a href="http://[2409:8087:7000:20::11]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226231/index.m3u8" target="_blank">CCTV-1 综合</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::6]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226195/index.m3u8" target="_blank">CCTV-2 财经</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::7]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226397/index.m3u8" target="_blank">CCTV-3 综艺</a></li>
-			<li> <a href="http://[2409:8087:7000:20::204]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226191/index.m3u8" target="_blank">CCTV-4 中文国际</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::5]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226395/index.m3u8" target="_blank">CCTV-5 体育</a></li>
-			<li> <a href="http://[2409:8087:7000:20::203]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225761/index.m3u8" target="_blank">CCTV-5+ 体育赛事</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::7]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226393/index.m3u8" target="_blank">CCTV-6 电影</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226192/index.m3u8" target="_blank">CCTV-7 国防军事</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::8]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226391/index.m3u8" target="_blank">CCTV-8 电视剧</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226197/index.m3u8" target="_blank">CCTV-9 纪录</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::2]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226189/index.m3u8" target="_blank">CCTV-10 科教</a></li>
-			<li> <a href="http://39.134.24.162/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226189/1.m3u8" target="_blank">CCTV-10 科教</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::5]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226240/index.m3u8" target="_blank">CCTV-11 戏曲</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::6]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226190/index.m3u8" target="_blank">CCTV-12 社会与法</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::2]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226233/index.m3u8" target="_blank">CCTV-13 新闻</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::2]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226193/index.m3u8" target="_blank">CCTV-14 少儿</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225785/index.m3u8" target="_blank">CCTV-15 音乐</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::9]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226921/index.m3u8" target="_blank">CCTV-16 奥林匹克</a></li>
-			<li> <a href="http://39.134.24.162/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226921/index.m3u8" target="_blank">CCTV-16 奥林匹克</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::5]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226198/index.m3u8" target="_blank">CCTV-17 农业农村</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226465/index.m3u8" target="_blank">CHC动作电影</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226462/index.m3u8" target="_blank">CHC家庭影院</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226463/index.m3u8" target="_blank">CHC高清电影</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226975/index.m3u8" target="_blank">兵器科技</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226972/index.m3u8" target="_blank">怀旧剧场</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226947/index.m3u8" target="_blank">世界地理</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226981/index.m3u8" target="_blank">文化精品</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226956/index.m3u8" target="_blank">央视台球</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226978/index.m3u8" target="_blank">央视高网</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226950/index.m3u8" target="_blank">风云剧场</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226953/index.m3u8" target="_blank">风云音乐</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226959/index.m3u8" target="_blank">第一剧场</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226969/index.m3u8" target="_blank">女性时尚</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226984/index.m3u8" target="_blank">风云足球</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226987/index.m3u8" target="_blank">电视指南</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225745/index.m3u8" target="_blank">CGTN英语</a></li>
-			<li> <a href="http://89.254.128.5:22280/1_2/mono.m3u8" target="_blank">中国教育1台</a></li>
-			<li> <a href="https://cdn.002radio.com:3909/live/radio002live.m3u8" target="_blank">Radio TV</a></li>
-			<li> <a href="https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/2m_monde/hls_video_ts_tuhawxpiemz257adfc/2m_monde.m3u8" target="_blank">中国教育2台</a></li>
-			<li> <a href="https://3abn-live.akamaized.net/hls/live/2010549/Proclaim/master.m3u8" target="_blank">中国教育3台</a></li>
-			<li> <a href="https://6n3yogbnd9ok-hls-live.5centscdn.com/threetamil/d0dbe915091d400bd8ee7f27f0791303.sdp/index.m3u8" target="_blank">中国教育3台</a></li>
-			<li> <a href="https://lnc-4adventure.tubi.video/playlist.m3u8" target="_blank">中国教育4台</a></li>
-			<li> <a href="https://rds3.desdeparaguay.net/4dmasnoticiastv/4dmasnoticiastv/playlist.m3u8" target="_blank">中国教育4台</a></li>
-			<li> <a href="https://hls.4utv.live/hls/stream.m3u8" target="_blank">中国教育4台</a></li>
-			<li> <a href="http://158.69.124.9:1935/5aabtv/5aabtv/playlist.m3u8" target="_blank">BTV生活</a></li>
-			<li> <a href="https://6prlive.akamaized.net/hls/live/2033806/6PR/index.m3u8 " target="_blank">6PR Perth</a></li>
-			<li> <a href="https://12channel.bonus-tv.ru/cdn/12channel_blackout/playlist.m3u8" target="_blank">中国教育1台</a></li>
-			<li> <a href="https://lives.digiteka.com/stream/86d3e867-a272-496b-8412-f59aa0104771/index.m3u8" target="_blank">中国教育2台</a></li>
-			<li> <a href="https://kanal24.blutv.com/blutv_kanal24_live/live.m3u8" target="_blank">中国教育2台</a></li>
-			<li> <a href="https://30a-tv.com/darcizzle.m3u8" target="_blank">中国教育3台</a></li>
-			<li> <a href="https://30a-tv.com/gh.m3u8" target="_blank">中国教育3台</a></li>			
+			<li value="http://[2409:8087:7000:20::11]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226231/index.m3u8" title="CCTV-1 综合">CCTV-1 综合</li>
+			<li value="http://[2409:8087:7001:20:3::6]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226195/index.m3u8" title="CCTV-2 财经">CCTV-2 财经</li>
+			<li value="http://[2409:8087:7001:20:3::7]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226397/index.m3u8" title="CCTV-3 综艺">CCTV-3 综艺</li>
+			<li value="http://[2409:8087:7000:20::204]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226191/index.m3u8" title="CCTV-4 中文国际">CCTV-4 中文国际</li>
+			<li value="http://[2409:8087:7001:20:3::5]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226395/index.m3u8" title="CCTV-5 体育">CCTV-5 体育</li>
+			<li value="http://[2409:8087:7000:20::203]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225761/index.m3u8" title="CCTV-5+ 体育赛事">CCTV-5+ 体育赛事</li>
+			<li value="http://[2409:8087:7001:20:3::7]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226393/index.m3u8" title="CCTV-6 电影">CCTV-6 电影</li>
+			<li value="http://[2409:8087:7001:20:3::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226192/index.m3u8" title="CCTV-7 国防军事">CCTV-7 国防军事</li>
+			<li value="http://[2409:8087:7001:20:3::8]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226391/index.m3u8" title="CCTV-8 电视剧">CCTV-8 电视剧</li>
+			<li value="http://[2409:8087:7001:20:3::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226197/index.m3u8" title="CCTV-9 纪录">CCTV-9 纪录</li>
+			<li value="http://[2409:8087:7001:20:3::2]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226189/index.m3u8" title="CCTV-10 科教">CCTV-10 科教</li>
+			<li value="http://39.134.24.162/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226189/1.m3u8" title="CCTV-10 科教">CCTV-10 科教</li>
+			<li value="http://[2409:8087:7001:20:3::5]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226240/index.m3u8" title="CCTV-11 戏曲">CCTV-11 戏曲</li>
+			<li value="http://[2409:8087:7001:20:3::6]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226190/index.m3u8" title="CCTV-12 社会与法">CCTV-12 社会与法</li>
+			<li value="http://[2409:8087:7001:20:3::2]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226233/index.m3u8" title="CCTV-13 新闻">CCTV-13 新闻</li>
+			<li value="http://[2409:8087:7001:20:3::2]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226193/index.m3u8" title="CCTV-14 少儿">CCTV-14 少儿</li>
+			<li value="http://[2409:8087:7001:20:3::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225785/index.m3u8" title="CCTV-15 音乐">CCTV-15 音乐</li>
+			<li value="http://[2409:8087:7001:20:3::9]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226921/index.m3u8" title="CCTV-16 奥林匹克">CCTV-16 奥林匹克</li>
+			<li value="http://39.134.24.162/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226921/index.m3u8" title="CCTV-16 奥林匹克">CCTV-16 奥林匹克</li>
+			<li value="http://[2409:8087:7001:20:3::5]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226198/index.m3u8" title="CCTV-17 农业农村">CCTV-17 农业农村</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226465/index.m3u8" title="CHC动作电影">CHC动作电影</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226462/index.m3u8" title="CHC家庭影院">CHC家庭影院</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226463/index.m3u8" title="CHC高清电影">CHC高清电影</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226975/index.m3u8" title="兵器科技">兵器科技</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226972/index.m3u8" title="怀旧剧场">怀旧剧场</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226947/index.m3u8" title="世界地理">世界地理</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226981/index.m3u8" title="文化精品">文化精品</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226956/index.m3u8" title="央视台球">央视台球</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226978/index.m3u8" title="央视高网">央视高网</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226950/index.m3u8" title="风云剧场">风云剧场</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226953/index.m3u8" title="风云音乐">风云音乐</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226959/index.m3u8" title="第一剧场">第一剧场</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226969/index.m3u8" title="女性时尚">女性时尚</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226984/index.m3u8" title="风云足球">风云足球</li>
+			<li value="http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226987/index.m3u8" title="电视指南">电视指南</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225745/index.m3u8" title="CGTN英语">CGTN英语</li>
+			<li value="http://89.254.128.5:22280/1_2/mono.m3u8" title="中国教育1台">中国教育1台</li>
+			<li value="https://cdn.002radio.com:3909/live/radio002live.m3u8" title="Radio TV">Radio TV</li>
+			<li value="https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/2m_monde/hls_video_ts_tuhawxpiemz257adfc/2m_monde.m3u8" title="中国教育2台">中国教育2台</li>
+			<li value="https://3abn-live.akamaized.net/hls/live/2010549/Proclaim/master.m3u8" title="中国教育3台">中国教育3台</li>
+			<li value="https://6n3yogbnd9ok-hls-live.5centscdn.com/threetamil/d0dbe915091d400bd8ee7f27f0791303.sdp/index.m3u8" title="中国教育3台">中国教育3台</li>
+			<li value="https://lnc-4adventure.tubi.video/playlist.m3u8" title="中国教育4台">中国教育4台</li>
+			<li value="https://rds3.desdeparaguay.net/4dmasnoticiastv/4dmasnoticiastv/playlist.m3u8" title="中国教育4台">中国教育4台</li>
+			<li value="https://hls.4utv.live/hls/stream.m3u8" title="中国教育4台">中国教育4台</li>
+			<li value="http://158.69.124.9:1935/5aabtv/5aabtv/playlist.m3u8" title="BTV生活">BTV生活</li>
+			<li value="https://6prlive.akamaized.net/hls/live/2033806/6PR/index.m3u8 " title="6PR Perth ">6PR Perth</li>
+			<li value="https://12channel.bonus-tv.ru/cdn/12channel_blackout/playlist.m3u8" title="中国教育1台">中国教育1台</li>
+			<li value="https://lives.digiteka.com/stream/86d3e867-a272-496b-8412-f59aa0104771/index.m3u8" title="中国教育2台">中国教育2台</li>
+			<li value="https://kanal24.blutv.com/blutv_kanal24_live/live.m3u8" title="中国教育2台">中国教育2台</li>
+			<li value="https://30a-tv.com/darcizzle.m3u8" title="中国教育3台">中国教育3台</li>
+			<li value="https://30a-tv.com/gh.m3u8" title="中国教育3台">中国教育3台</li>			
 
 			</ul>			
 			<header><h2>卫视高清46个</h2></header>
 			<ul>				
-			<li> <a href="http://ali-m-l.cztv.com/channels/lantian/channel01/1080p.m3u8" target="_blank">浙江卫视</a></li>	
-			<li> <a href="http://39.134.24.161/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225802/index.m3u8" target="_blank">黑龙江卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226338/index.m3u8" target="_blank">四川卫视</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226204/index.m3u8" target="_blank">天津卫视</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::6]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226196/index.m3u8" target="_blank">安徽卫视</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226209/index.m3u8" target="_blank">山东卫视</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225803/index.m3u8" target="_blank">广东卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226380/index.m3u8" target="_blank">广西卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226344/index.m3u8" target="_blank">江西卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226406/index.m3u8" target="_blank">河北卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226480/index.m3u8" target="_blank">河南卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226465/index.m3u8" target="_blank">海南卫视</a></li>
-			<li> <a href="http://[2409:8087:7000:20::15]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225801/index.m3u8" target="_blank">深圳卫视</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226206/index.m3u8" target="_blank">湖北卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4001]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225624/index.m3u8" target="_blank">山西卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226341/index.m3u8" target="_blank">东南卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226474/index.m3u8" target="_blank">贵州卫视</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226201/index.m3u8" target="_blank">辽宁卫视</a></li>
-			<li> <a href="http://[2409:8087:7000:20::18]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226202/index.m3u8" target="_blank">重庆卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4017]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225634/index.m3u8" target="_blank">内蒙古卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4004]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225632/index.m3u8" target="_blank">宁夏卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225633/index.m3u8" target="_blank">甘肃卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226397/index.m3u8" target="_blank">吉林卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226444/index.m3u8" target="_blank">云南卫视</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb21]:80/ott.mobaibox.com/PLTV/4/224/3221228626/index.m3u8" target="_blank">三沙卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4002]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225628/index.m3u8" target="_blank">青海卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225635/index.m3u8" target="_blank">新疆卫视</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226212/index.m3u8" target="_blank">西藏卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226439/index.m3u8" target="_blank">兵团卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226516/index.m3u8" target="_blank">延边卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226442/index.m3u8" target="_blank">大湾区卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4007]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225659/index.m3u8" target="_blank">安多卫视</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226219/index.m3u8" target="_blank">厦门卫视</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226229/index.m3u8" target="_blank">农林卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225660/index.m3u8" target="_blank">康巴卫视</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225652/index.m3u8" target="_blank">CETV-1</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4013]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226425/index.m3u8" target="_blank">CETV-2</a></li>
-			<li> <a href="http://[2409:8087:7004:20:1000::22]:6610/yinhe/2/ch00000090990000001309/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" target="_blank">CETV-3</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8" target="_blank">CETV-4</a></li>
+			<li value="http://ali-m-l.cztv.com/channels/lantian/channel01/1080p.m3u8" title="浙江卫视">浙江卫视</li>	
+			<li value="http://39.134.24.161/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225802/index.m3u8" title="黑龙江卫视">黑龙江卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226338/index.m3u8" title="四川卫视">四川卫视</li>
+			<li value="http://[2409:8087:7001:20:3::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226204/index.m3u8" title="天津卫视">天津卫视</li>
+			<li value="http://[2409:8087:7001:20:3::6]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226196/index.m3u8" title="安徽卫视">安徽卫视</li>
+			<li value="http://[2409:8087:7001:20:3::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226209/index.m3u8" title="山东卫视">山东卫视</li>
+			<li value="http://[2409:8087:7001:20:3::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225803/index.m3u8" title="广东卫视">广东卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226380/index.m3u8" title="广西卫视">广西卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226344/index.m3u8" title="江西卫视">江西卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226406/index.m3u8" title="河北卫视">河北卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226480/index.m3u8" title="河南卫视">河南卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226465/index.m3u8" title="海南卫视">海南卫视</li>
+			<li value="http://[2409:8087:7000:20::15]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225801/index.m3u8" title="深圳卫视">深圳卫视</li>
+			<li value="http://[2409:8087:7001:20:3::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226206/index.m3u8" title="湖北卫视">湖北卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4001]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225624/index.m3u8" title="山西卫视">山西卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226341/index.m3u8" title="东南卫视">东南卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226474/index.m3u8" title="贵州卫视">贵州卫视</li>
+			<li value="http://[2409:8087:7001:20:2::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226201/index.m3u8" title="辽宁卫视">辽宁卫视</li>
+			<li value="http://[2409:8087:7000:20::18]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226202/index.m3u8" title="重庆卫视">重庆卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4017]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225634/index.m3u8" title="内蒙古卫视">内蒙古卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4004]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225632/index.m3u8" title="宁夏卫视">宁夏卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225633/index.m3u8" title="甘肃卫视">甘肃卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226397/index.m3u8" title="吉林卫视">吉林卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226444/index.m3u8" title="云南卫视">云南卫视</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb21]:80/ott.mobaibox.com/PLTV/4/224/3221228626/index.m3u8" title="三沙卫视">三沙卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4002]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225628/index.m3u8" title="青海卫视">青海卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225635/index.m3u8" title="新疆卫视">新疆卫视</li>
+			<li value="http://[2409:8087:7001:20:2::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226212/index.m3u8" title="西藏卫视">西藏卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226439/index.m3u8" title="兵团卫视">兵团卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226516/index.m3u8" title="延边卫视">延边卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226442/index.m3u8" title="大湾区卫视">大湾区卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4007]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225659/index.m3u8" title="安多卫视">安多卫视</li>
+			<li value="http://[2409:8087:7001:20:3::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226219/index.m3u8" title="厦门卫视">厦门卫视</li>
+			<li value="http://[2409:8087:7001:20:3::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226229/index.m3u8" title="农林卫视">农林卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225660/index.m3u8" title="康巴卫视">康巴卫视</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225652/index.m3u8" title="CETV-1">CETV-1</li>
+			<li value="http://[2409:8087:1a0b:df::4013]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226425/index.m3u8" title="CETV-2">CETV-2</li>
+			<li value="http://[2409:8087:7004:20:1000::22]:6610/yinhe/2/ch00000090990000001309/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" title="CETV-3">CETV-3</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225783/index.m3u8" title="CETV-4">CETV-4</li>
 
 			</ul>			
 			<header><h2>地方台80个</h2></header>
 			<ul>				
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226238/index.m3u8" target="_blank">山东教育</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226994/index.m3u8" target="_blank">金色学堂</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226230/index.m3u8" target="_blank">纪实人文</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226966/index.m3u8" target="_blank">第一财经</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226580/index.m3u8" target="_blank">乐游频道</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226581/index.m3u8" target="_blank">都市剧场</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226582/index.m3u8" target="_blank">欢笑剧场</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226232/index.m3u8" target="_blank">纪实科教</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225654/index.m3u8" target="_blank">卡酷少儿</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226351/index.m3u8" target="_blank">金鹰纪实</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4008]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225653/index.m3u8" target="_blank">金鹰卡通</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226808/index.m3u8" target="_blank">茶友频道</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226805/index.m3u8" target="_blank">快乐垂钓</a></li>
-			<li> <a href="http://[2409:8087:7001:20:2::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226579/index.m3u8" target="_blank">游戏风云</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225656/index.m3u8" target="_blank">优漫卡通</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4001]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225657/index.m3u8" target="_blank">哈哈炫动</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226227/index.m3u8" target="_blank">嘉佳卡通</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226951/index.m3u8" target="_blank">哒啵电竞</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226954/index.m3u8" target="_blank">哒啵赛事</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb04]:80/ott.mobaibox.com/PLTV/3/224/3221225567/index.m3u8" target="_blank">黑莓电影</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4006]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225662/index.m3u8" target="_blank">黑莓动画</a></li>
-			<li> <a href="http://[2409:8087:4c0a:22:1::11]:6410/170000001115/UmaiCHAN6380788ba7bed/index.m3u8?AuthInfo=toEYVdLfxymUP2l9NZpQI5%2BK6T7j%2FlRm%2BvbM9VO7bA0q1S1k1f36SqqriM0FZoFSAJRfCt8SS7X6sTRmXb81a8O4H%2FdroDKjLoDeaMQdyJQ" target="_blank">梨园频道</a></li>
-			<li> <a href="http://[2409:8087:7004:20:1000::22]:6610/yinhe/2/ch00000090990000001322/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" target="_blank">弈坛春秋</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::5]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226236/index.m3u8" target="_blank">老故事</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226350/index.m3u8" target="_blank">财富天下</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226241/index.m3u8" target="_blank">置业频道</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226247/index.m3u8" target="_blank">家庭理财</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::6]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226239/index.m3u8" target="_blank">劲爆体育</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000011000031110/index.m3u8?channel-id=bestzb&Contentid=5000000011000031110&livemode=1&stbId=3" target="_blank">上海新闻</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000010000018926/index.m3u8?channel-id=bestzb&Contentid=5000000010000018926&livemode=1&stbId=3" target="_blank">上海都市</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000010000030951/index.m3u8?channel-id=bestzb&Contentid=5000000010000030951&livemode=1&stbId=3" target="_blank">上海ICS</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000011000031116/index.m3u8?channel-id=bestzb&Contentid=5000000011000031116&livemode=1&stbId=3" target="_blank">七彩戏剧</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000010000017540/index.m3u8?channel-id=bestzb&Contentid=5000000010000017540&livemode=1&stbId=3" target="_blank">五星体育</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000010000032212/index.m3u8?channel-id=bestzb&Contentid=5000000010000032212&livemode=1&stbId=3" target="_blank">东方影视</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000007000010003/index.m3u8?channel-id=bestzb&Contentid=5000000007000010003&livemode=1&stbId=3" target="_blank">东方财经</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::88]:6610/000000001000/9001547084732463424/index.m3u8?channel-id=bestzb&Contentid=9001547084732463424&livemode=1&stbId=3" target="_blank">法治天地</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000010000027146/index.m3u8?channel-id=bestzb&Contentid=5000000010000027146&livemode=1&stbId=3" target="_blank">第一财经</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000007000010004/index.m3u8?channel-id=bestzb&Contentid=5000000007000010004&livemode=1&stbId=3" target="_blank">东方购物</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8" target="_blank">浙江公共新闻</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8" target="_blank">浙江国际</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8" target="_blank">浙江少儿</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8" target="_blank">浙江教科影视</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8" target="_blank">浙江数码时代</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8" target="_blank">浙江民生休闲</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8" target="_blank">浙江经济生活</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8" target="_blank">浙江钱江频道</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226357/index.m3u8" target="_blank">陕西新闻资讯</a></li>
-			<li> <a href="http://[2409:8087:7001:20:3::6]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226358/index.m3u8" target="_blank">陕西都市青春</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226359/index.m3u8" target="_blank">陕西生活频道</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226360/index.m3u8" target="_blank">陕西影视频道</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226361/index.m3u8" target="_blank">陕西公共频道</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226363/index.m3u8" target="_blank">陕西体育休闲</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226364/index.m3u8" target="_blank">陕西西部电影</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226366/index.m3u8" target="_blank">西安新闻综合</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226367/index.m3u8" target="_blank">西安都市频道</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226368/index.m3u8" target="_blank">西安商务资讯</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226369/index.m3u8" target="_blank">西安影视频道</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226370/index.m3u8" target="_blank">西安丝路频道</a></li>
-			<li> <a href="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226371/index.m3u8" target="_blank">西安教育频道</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::95]:6610/000000001000/6000000002000032052/index.m3u8?channel-id=wasusyt&Contentid=6000000002000032052&livemode=1&stbId=3" target="_blank">求索记录</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::95]:6610/000000001000/6000000002000010046/index.m3u8?channel-id=wasusyt&Contentid=6000000002000010046&livemode=1&stbId=3" target="_blank">求索动物</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::95]:6610/000000001000/6000000002000032344/index.m3u8?channel-id=wasusyt&Contentid=6000000002000032344&livemode=1&stbId=3" target="_blank">求索科学</a></li>
-			<li> <a href="http://[2409:8087:7001:20:1000::95]:6610/000000001000/6000000002000003382/index.m3u8?channel-id=wasusyt&Contentid=6000000002000003382&livemode=1&stbId=3" target="_blank">求索生活</a></li>
-			<li> <a href="http://[2409:8087:7000:20::f]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226009/index.m3u8" target="_blank">超级综艺</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4017]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225715/index.m3u8" target="_blank">超级体育</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4006]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225717/index.m3u8" target="_blank">超级电影</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4017]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225716/index.m3u8" target="_blank">超级电视剧</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb19]:80/ott.mobaibox.com/PLTV/3/224/3221227533/index.m3u8" target="_blank">武博世界</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb19]:80/ott.mobaibox.com/PLTV/3/224/3221227530/index.m3u8" target="_blank">中国功夫</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb06]:80/ott.mobaibox.com/PLTV/3/224/3221227603/index.m3u8" target="_blank">军旅剧场</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb09]:80/ott.mobaibox.com/PLTV/3/224/3221227475/index.m3u8" target="_blank">炫舞未来</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb19]:80/ott.mobaibox.com/PLTV/3/224/3221227527/index.m3u8" target="_blank">潮妈辣婆</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb1b]:80/ott.mobaibox.com/PLTV/3/224/3221227615/index.m3u8" target="_blank">精品体育</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb1a]:80/ott.mobaibox.com/PLTV/3/224/3221227547/index.m3u8" target="_blank">精品纪录</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb06]:80/ott.mobaibox.com/PLTV/3/224/3221227600/index.m3u8" target="_blank">家庭剧场</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb1a]:80/ott.mobaibox.com/PLTV/3/224/3221227618/index.m3u8" target="_blank">精品大剧</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb18]:80/ott.mobaibox.com/PLTV/3/224/3221227544/index.m3u8" target="_blank">军事评论</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb18]:80/ott.mobaibox.com/PLTV/3/224/3221227594/index.m3u8" target="_blank">明星大片</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4017]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225741/index.m3u8" target="_blank">东北热剧</a></li>
-			<li> <a href="http://[2409:8087:1a0b:df::4017]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225742/index.m3u8" target="_blank">欢乐剧场</a></li>
-			<li> <a href="https://epg.pw/stream/730624d47482fed3331196e40e506833a98c72142af419b50c098c0fdedb850b.m3u8" target="_blank">「四川」马尔康综合</a></li>
-			<li> <a href="https://epg.pw/stream/320904a117c248f03fd8884b134a345d2018d02edc96513424606b071e823bec.m3u8" target="_blank">紀實「四川」马尔康综合</a></li>
-			<li> <a href="https://epg.pw/stream/5fccf4a4972d39810ed6ac299db54c1cd33cf614dc04364ed982a90592ebff1f.m3u8" target="_blank">紀實 大愛2</a></li>
-			<li> <a href="https://epg.pw/stream/e3823ebcbb226f0ca9bf92c0d893109277baef872c9ba9a6d4f60078318770a1.m3u8" target="_blank">紀實 好消息</a></li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226238/index.m3u8" title="山东教育">山东教育</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226994/index.m3u8" title="金色学堂">金色学堂</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226230/index.m3u8" title="纪实人文">纪实人文</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226966/index.m3u8" title="第一财经">第一财经</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226580/index.m3u8" title="乐游频道">乐游频道</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226581/index.m3u8" title="都市剧场">都市剧场</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226582/index.m3u8" title="欢笑剧场">欢笑剧场</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226232/index.m3u8" title="纪实科教">纪实科教</li>
+			<li value="http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225654/index.m3u8" title="卡酷少儿">卡酷少儿</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226351/index.m3u8" title="金鹰纪实">金鹰纪实</li>
+			<li value="http://[2409:8087:1a0b:df::4008]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225653/index.m3u8" title="金鹰卡通">金鹰卡通</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226808/index.m3u8" title="茶友频道">茶友频道</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226805/index.m3u8" title="快乐垂钓">快乐垂钓</li>
+			<li value="http://[2409:8087:7001:20:2::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226579/index.m3u8" title="游戏风云">游戏风云</li>
+			<li value="http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225656/index.m3u8" title="优漫卡通">优漫卡通</li>
+			<li value="http://[2409:8087:1a0b:df::4001]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225657/index.m3u8" title="哈哈炫动">哈哈炫动</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226227/index.m3u8" title="嘉佳卡通">嘉佳卡通</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226951/index.m3u8" title="哒啵电竞">哒啵电竞</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226954/index.m3u8" title="哒啵赛事">哒啵赛事</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb04]:80/ott.mobaibox.com/PLTV/3/224/3221225567/index.m3u8" title="黑莓电影">黑莓电影</li>
+			<li value="http://[2409:8087:1a0b:df::4006]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225662/index.m3u8" title="黑莓动画">黑莓动画</li>
+			<li value="http://[2409:8087:4c0a:22:1::11]:6410/170000001115/UmaiCHAN6380788ba7bed/index.m3u8?AuthInfo=toEYVdLfxymUP2l9NZpQI5%2BK6T7j%2FlRm%2BvbM9VO7bA0q1S1k1f36SqqriM0FZoFSAJRfCt8SS7X6sTRmXb81a8O4H%2FdroDKjLoDeaMQdyJQ" title="梨园频道">梨园频道</li>
+			<li value="http://[2409:8087:7004:20:1000::22]:6610/yinhe/2/ch00000090990000001322/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" title="弈坛春秋">弈坛春秋</li>
+			<li value="http://[2409:8087:7001:20:3::5]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226236/index.m3u8" title="老故事">老故事</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226350/index.m3u8" title="财富天下">财富天下</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226241/index.m3u8" title="置业频道">置业频道</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226247/index.m3u8" title="家庭理财">家庭理财</li>
+			<li value="http://[2409:8087:7001:20:3::6]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226239/index.m3u8" title="劲爆体育">劲爆体育</li>
+			<li value="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000011000031110/index.m3u8?channel-id=bestzb&Contentid=5000000011000031110&livemode=1&stbId=3" title="上海新闻">上海新闻</li>
+			<li value="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000010000018926/index.m3u8?channel-id=bestzb&Contentid=5000000010000018926&livemode=1&stbId=3" title="上海都市">上海都市</li>
+			<li value="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000010000030951/index.m3u8?channel-id=bestzb&Contentid=5000000010000030951&livemode=1&stbId=3" title="上海ICS">上海ICS</li>
+			<li value="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000011000031116/index.m3u8?channel-id=bestzb&Contentid=5000000011000031116&livemode=1&stbId=3" title="七彩戏剧">七彩戏剧</li>
+			<li value="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000010000017540/index.m3u8?channel-id=bestzb&Contentid=5000000010000017540&livemode=1&stbId=3" title="五星体育">五星体育</li>
+			<li value="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000010000032212/index.m3u8?channel-id=bestzb&Contentid=5000000010000032212&livemode=1&stbId=3" title="东方影视">东方影视</li>
+			<li value="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000007000010003/index.m3u8?channel-id=bestzb&Contentid=5000000007000010003&livemode=1&stbId=3" title="东方财经">东方财经</li>
+			<li value="http://[2409:8087:7001:20:1000::88]:6610/000000001000/9001547084732463424/index.m3u8?channel-id=bestzb&Contentid=9001547084732463424&livemode=1&stbId=3" title="法治天地">法治天地</li>
+			<li value="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000010000027146/index.m3u8?channel-id=bestzb&Contentid=5000000010000027146&livemode=1&stbId=3" title="第一财经">第一财经</li>
+			<li value="http://[2409:8087:7001:20:1000::88]:6610/000000001000/5000000007000010004/index.m3u8?channel-id=bestzb&Contentid=5000000007000010004&livemode=1&stbId=3" title="东方购物">东方购物</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8" title="浙江公共新闻">浙江公共新闻</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8" title="浙江国际">浙江国际</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8" title="浙江少儿">浙江少儿</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8" title="浙江教科影视">浙江教科影视</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8" title="浙江数码时代">浙江数码时代</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8" title="浙江民生休闲">浙江民生休闲</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8" title="浙江经济生活">浙江经济生活</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8" title="浙江钱江频道">浙江钱江频道</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226357/index.m3u8" title="陕西新闻资讯">陕西新闻资讯</li>
+			<li value="http://[2409:8087:7001:20:3::6]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226358/index.m3u8" title="陕西都市青春">陕西都市青春</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226359/index.m3u8" title="陕西生活频道">陕西生活频道</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226360/index.m3u8" title="陕西影视频道">陕西影视频道</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226361/index.m3u8" title="陕西公共频道">陕西公共频道</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226363/index.m3u8" title="陕西体育休闲">陕西体育休闲</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226364/index.m3u8" title="陕西西部电影">陕西西部电影</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226366/index.m3u8" title="西安新闻综合">西安新闻综合</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226367/index.m3u8" title="西安都市频道">西安都市频道</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226368/index.m3u8" title="西安商务资讯">西安商务资讯</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226369/index.m3u8" title="西安影视频道">西安影视频道</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226370/index.m3u8" title="西安丝路频道">西安丝路频道</li>
+			<li value="http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226371/index.m3u8" title="西安教育频道">西安教育频道</li>
+			<li value="http://[2409:8087:7001:20:1000::95]:6610/000000001000/6000000002000032052/index.m3u8?channel-id=wasusyt&Contentid=6000000002000032052&livemode=1&stbId=3" title="求索记录">求索记录</li>
+			<li value="http://[2409:8087:7001:20:1000::95]:6610/000000001000/6000000002000010046/index.m3u8?channel-id=wasusyt&Contentid=6000000002000010046&livemode=1&stbId=3" title="求索动物">求索动物</li>
+			<li value="http://[2409:8087:7001:20:1000::95]:6610/000000001000/6000000002000032344/index.m3u8?channel-id=wasusyt&Contentid=6000000002000032344&livemode=1&stbId=3" title="求索科学">求索科学</li>
+			<li value="http://[2409:8087:7001:20:1000::95]:6610/000000001000/6000000002000003382/index.m3u8?channel-id=wasusyt&Contentid=6000000002000003382&livemode=1&stbId=3" title="求索生活">求索生活</li>
+			<li value="http://[2409:8087:7000:20::f]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226009/index.m3u8" title="超级综艺">超级综艺</li>
+			<li value="http://[2409:8087:1a0b:df::4017]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225715/index.m3u8" title="超级体育">超级体育</li>
+			<li value="http://[2409:8087:1a0b:df::4006]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225717/index.m3u8" title="超级电影">超级电影</li>
+			<li value="http://[2409:8087:1a0b:df::4017]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225716/index.m3u8" title="超级电视剧">超级电视剧</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb19]:80/ott.mobaibox.com/PLTV/3/224/3221227533/index.m3u8" title="武博世界">武博世界</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb19]:80/ott.mobaibox.com/PLTV/3/224/3221227530/index.m3u8" title="中国功夫">中国功夫</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb06]:80/ott.mobaibox.com/PLTV/3/224/3221227603/index.m3u8" title="军旅剧场">军旅剧场</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb09]:80/ott.mobaibox.com/PLTV/3/224/3221227475/index.m3u8" title="炫舞未来">炫舞未来</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb19]:80/ott.mobaibox.com/PLTV/3/224/3221227527/index.m3u8" title="潮妈辣婆">潮妈辣婆</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb1b]:80/ott.mobaibox.com/PLTV/3/224/3221227615/index.m3u8" title="精品体育">精品体育</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb1a]:80/ott.mobaibox.com/PLTV/3/224/3221227547/index.m3u8" title="精品纪录">精品纪录</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb06]:80/ott.mobaibox.com/PLTV/3/224/3221227600/index.m3u8" title="家庭剧场">家庭剧场</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb1a]:80/ott.mobaibox.com/PLTV/3/224/3221227618/index.m3u8" title="精品大剧">精品大剧</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb18]:80/ott.mobaibox.com/PLTV/3/224/3221227544/index.m3u8" title="军事评论">军事评论</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb18]:80/ott.mobaibox.com/PLTV/3/224/3221227594/index.m3u8" title="明星大片">明星大片</li>
+			<li value="http://[2409:8087:1a0b:df::4017]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225741/index.m3u8" title="东北热剧">东北热剧</li>
+			<li value="http://[2409:8087:1a0b:df::4017]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225742/index.m3u8" title="欢乐剧场">欢乐剧场</li>
+			<li value="https://epg.pw/stream/730624d47482fed3331196e40e506833a98c72142af419b50c098c0fdedb850b.m3u8" title="「四川」马尔康综合">「四川」马尔康综合</li>
+			<li value="https://epg.pw/stream/320904a117c248f03fd8884b134a345d2018d02edc96513424606b071e823bec.m3u8" title="紀實「四川」马尔康综合">紀實「四川」马尔康综合</li>
+			<li value="https://epg.pw/stream/5fccf4a4972d39810ed6ac299db54c1cd33cf614dc04364ed982a90592ebff1f.m3u8" title="紀實 大愛2">紀實 大愛2</li>
+			<li value="https://epg.pw/stream/e3823ebcbb226f0ca9bf92c0d893109277baef872c9ba9a6d4f60078318770a1.m3u8" title="紀實 好消息">紀實 好消息</li>
 			</ul>			
 			<header><h2>国际时事频道10个</h2></header>
 			<ul>				
-			<li> <a href="http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000002905/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" target="_blank">CGTN记录</a></li>
-			<li> <a href="http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000002883/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" target="_blank">CGTN俄语</a></li>
-			<li> <a href="http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000002827/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" target="_blank">CGTN法语</a></li>
-			<li> <a href="http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000002716/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" target="_blank">CGTN西语</a></li>
-			<li> <a href="http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000002826/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" target="_blank">CGTN阿语</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb22]:80/ott.mobaibox.com/PLTV/3/224/3221228527/index.m3u8" target="_blank">凤凰中文</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb19]:80/ott.mobaibox.com/PLTV/3/224/3221228524/index.m3u8" target="_blank">凤凰资讯</a></li>
-			<li> <a href="http://[2409:8087:2001:20:2800:0:df6e:eb23]:80/ott.mobaibox.com/PLTV/1/224/3221228530/index.m3u8" target="_blank">凤凰香港</a></li>
-			<li> <a href="https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index_1M.m3u8" target="_blank">NHK World</a></li>
-			<li> <a href="https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8" target="_blank">CNA</a></li>
+			<li value="http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000002905/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" title="CGTN记录">CGTN记录</li>
+			<li value="http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000002883/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" title="CGTN俄语">CGTN俄语</li>
+			<li value="http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000002827/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" title="CGTN法语">CGTN法语</li>
+			<li value="http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000002716/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" title="CGTN西语">CGTN西语</li>
+			<li value="http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000002826/index.m3u8?virtualDomain=yinhe.live_hls.zte.com" title="CGTN阿语">CGTN阿语</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb22]:80/ott.mobaibox.com/PLTV/3/224/3221228527/index.m3u8" title="凤凰中文">凤凰中文</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb19]:80/ott.mobaibox.com/PLTV/3/224/3221228524/index.m3u8" title="凤凰资讯">凤凰资讯</li>
+			<li value="http://[2409:8087:2001:20:2800:0:df6e:eb23]:80/ott.mobaibox.com/PLTV/1/224/3221228530/index.m3u8" title="凤凰香港">凤凰香港</li>
+			<li value="https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index_1M.m3u8" title="NHK World">NHK World</li>
+			<li value="https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8" title="CNA">CNA</li>
 		
 			</ul>			
 			<header><h2>浙江7个频道</h2></header>
 			<ul>				
 			
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8" target="_blank">浙江钱江都市</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8" target="_blank">浙江经济生活</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8" target="_blank">浙江科教影视</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8" target="_blank">浙江民生休闲</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8" target="_blank">浙江公共新闻</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8" target="_blank">浙江少儿</a></li>
-			<li> <a href="https://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8" target="_blank">浙江国际</a></li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8" title="浙江钱江都市">浙江钱江都市</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8" title="浙江经济生活">浙江经济生活</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8" title="浙江科教影视">浙江科教影视</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8" title="浙江民生休闲">浙江民生休闲</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8" title="浙江公共新闻">浙江公共新闻</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8" title="浙江少儿">浙江少儿</li>
+			<li value="https://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8" title="浙江国际">浙江国际</li>
 				
 			</ul>			
 			<header><h2>地方台109个清晰度不高</h2></header>
 			<ul>				
 			
-			<li> <a href="http://123.146.162.24:8013/tslslive/PU2vzMI/hls/live_sd.m3u8" target="_blank">万州三峡移民</a></li>
-			<li> <a href="http://123.146.162.24:8013/tslslive/noEX9SG/hls/live_sd.m3u8" target="_blank">万州综合</a></li>
-			<li> <a href="https://l.cztvcloud.com/channels/lantian/SXshangyu1/720p.m3u8" target="_blank">上虞1新闻综合</a></li>
-			<li> <a href="https://l.cztvcloud.com/channels/lantian/SXshangyu3/720p.m3u8" target="_blank">上虞3新商都</a></li>
-			<li> <a href="https://l.cztvcloud.com/channels/lantian/SXshangyu2/720p.m3u8" target="_blank">上虞經濟文化</a></li>
-			<li> <a href="http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8" target="_blank">中国气象</a></li>
-			<li> <a href="https://file.hhtv.cc/cms/videos/nmip-media/channellive/channel1/playlist.m3u8" target="_blank">云南红河综合</a></li>
-			<li> <a href="http://220.180.110.101:8083/videos/live/39/13/o4ncrHkSp7q09/o4ncrHkSp7q09.m3u8" target="_blank">亳州农村</a></li>
-			<li> <a href="http://220.180.110.101:8083/videos/live/33/59/NC7XQdEveyncq/NC7XQdEveyncq.m3u8" target="_blank">亳州新聞</a></li>
-			<li> <a href="https://l.cztvcloud.com/channels/lantian/SXyuyao3/720p.m3u8" target="_blank">余姚姚江文化</a></li>
-			<li> <a href="https://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8" target="_blank">余姚新闻综合</a></li>
-			<li> <a href="http://222.178.181.121:12034/beibei01.m3u8" target="_blank">北碚综合</a></li> 
-			<li> <a href="https://live.nbs.cn/channels/njtv/xxpd/m3u8:500k/live.m3u8" target="_blank">南京信息</a></li>
-			<li> <a href="https://live.nbs.cn/channels/njtv/sbpd/m3u8:500k/live.m3u8" target="_blank">南京十八</a></li>
-			<li> <a href="https://live.nbs.cn/channels/njtv/ylpd/m3u8:500k/live.m3u8" target="_blank">南京娱乐</a></li>
-			<li> <a href="https://stream1.jlntv.cn/fzpd/sd/live.m3u8" target="_blank">吉林7</a></li> 
-			<li> <a href="https://stream1.jlntv.cn/xcpd/sd/live.m3u8" target="_blank">吉林乡村</a></li> 
-			<li> <a href="https://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/playlist.m3u8" target="_blank">唯心電視</a></li>
-			<li> <a href="http://live.dxhmt.cn:9081/tv/10883-1.m3u8" target="_blank">孟州电视台</a></li>
-			<li> <a href="http://live.ahsz.tv/video/s10001-ggpd/index.m3u8" target="_blank">宿州公共</a></li> 
-			<li> <a href="http://live.ahsz.tv/video/s10001-szzh/index.m3u8" target="_blank">宿州新闻综合</a></li> 
-			<li> <a href="http://live.ahsz.tv/video/s10001-kxjy/index.m3u8" target="_blank">宿州科教</a></li> 
-			<li> <a href="http://live.hnxttv.com:9601/live/dspd/800K/tzwj_video.m3u8?BVUUID=C236454D-5355-2F5F-FA96-1887C72E55CE&auth=654837809071524@615@2E9A5FD0B225B012E3178551CF3754A8" target="_blank">岳阳公共</a></li>
-			<li> <a href="https://l.cztvcloud.com/channels/lantian/SXshengzhou1/720p.m3u8" target="_blank">嵊州综合</a></li> 
-			<li> <a href="http://live.ybtvyun.com/video/s10016-7e5f23de35df/index.m3u8" target="_blank">延边卫视</a></li>
-			<li> <a href="http://live.dxhmt.cn:9081/tv/11003-1.m3u8" target="_blank">建安电视台</a></li> 
-			<li> <a href="http://stream.zjjrtv.com/zjjtv1/hd/live.m3u8" target="_blank">张家界1</a></li> 
-			<li> <a href="http://stream.zjjrtv.com/zjjtv2/hd/live.m3u8" target="_blank">张家界2</a></li> 
-			<li> <a href="https://live.funhillrm.com/2/playlist.m3u8" target="_blank">房山电视台</a></li>
-			<li> <a href="http://.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8" target="_blank">文山综合</a></li>
-			<li> <a href="https://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8" target="_blank">新昌休闲影视</a></li> 
-			<li> <a href="https://l.cztvcloud.com/channels/lantian/SXxinchang1/720p.m3u8" target="_blank">新昌新聞綜合</a></li> 
-			<li> <a href="http://live.xtgdw.cn:1935/live/xtxc/playlist.m3u8" target="_blank">新泰乡村党建</a></li> 
-			<li> <a href="http://111.17.214.4:1935/live/xtys/playlist.m3u8" target="_blank">新泰影視</a></li> 
-			<li> <a href="http://live.xtgdw.cn:1935/live/xtys/playlist.m3u8" target="_blank">新泰影視</a></li> 
-			<li> <a href="http://111.17.214.4:1935/live/xtsh/playlist.m3u8" target="_blank">新泰生活</a></li> 
-			<li> <a href="http://live.xtgdw.cn:1935/live/xtsh/playlist.m3u8" target="_blank">新泰生活</a></li> 
-			<li> <a href="http://111.17.214.4:1935/live/xtzh/playlist.m3u8" target="_blank">新泰综合</a></li>
-			<li> <a href="http://live.xtgdw.cn:1935/live/xtzh/playlist.m3u8" target="_blank">新泰综合</a></li> 
-			<li> <a href="http://111.17.214.4:1935/live/xtxc/playlist.m3u8" target="_blank">新泰鄉村黨建</a></li> 
-			<li> <a href="http://live.dxhmt.cn:9081/tv/10184-1.m3u8" target="_blank">新郑综合</a></li> 
-			<li> <a href="http://218.202.220.2:5000/nn_live.ts?id=STARTV" target="_blank">星空衛視</a></li>
-			<li> <a href="http://jzlive.jztvnews.com:90/live/jzgg.m3u8" target="_blank">晋中公共</a></li> 
-			<li> <a href="http://jzlive.jztvnews.com:90/live/jzzh.m3u8" target="_blank">晋中综合</a></li>
-			<li> <a href="http://hbjx.chinashadt.com:1935/live/stream:jx1.stream_360p/playlist.m3u8" target="_blank">景县电视一套</a></li> 
-			<li> <a href="http://hbjx.chinashadt.com:1935/live/jx1.stream/playlist.m3u8" target="_blank">景县电视一套</a></li> 
-			<li> <a href="http://stream.appwuhan.com/6tzb/sd/live.m3u8" target="_blank">武汉外语</a></li>
-			<li> <a href="http://stream.appwuhan.com/5tzb/sd/live.m3u8" target="_blank">武汉文体</a></li>
-			<li> <a href="http://stream.appwuhan.com/4tzb/sd/live.m3u8" target="_blank">武汉经济</a></li>
-			<li> <a href="http://222.179.155.21:1935/ch2.m3u8" target="_blank">江津文化旅游</a></li>
-			<li> <a href="http://222.179.155.21:1935/ch1.m3u8" target="_blank">江津新闻综合</a></li>
-			<li> <a href="http://222.179.155.21:1935/ch0.m3u8" target="_blank">江津经济生活</a></li>
-			<li> <a href="https://live.lyg1.com/ggpd/sd/live.m3u8" target="_blank">江苏连云港公共</a></li> 
-			<li> <a href="https://live.lyg1.com/zhpd/sd/live.m3u8" target="_blank">江苏连云港综合</a></li> 
-			<li> <a href="http://39.134.24.166/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226200/index.m3u8" target="_blank">江苏卫视</a></li>
-			<li> <a href="http://hebcx.chinashadt.com:2036/live/10002.stream/playlist.m3u8" target="_blank">沧县电视二套</a></li>
-			<li> <a href="http://hebcx.chinashadt.com:2036/live/10001.stream/playlist.m3u8" target="_blank">沧县电视综合</a></li>
-			<li> <a href="https://tmpstream.hyrtv.cn/hygg/sd/live.m3u8" target="_blank">河源公共</a></li>
-			<li> <a href="https://tmpstream.hyrtv.cn/xwzh/sd/live.m3u8" target="_blank">河源综合</a></li>
-			<li> <a href="http://117.172.215.250:8083/videos/live/35/39/GQVbrgob5CGJM/GQVbrgob5CGJM.m3u8" target="_blank">洪雅新闻综合</a></li>
-			<li> <a href="http://live.shaoxing.com.cn/video/s10001-sxtv3/index.m3u8" target="_blank">浙江绍兴影视</a></li>
-			<li> <a href="http://live.shaoxing.com.cn/video/s10001-sxtv1/index.m3u8" target="_blank">浙江绍兴综合</a></li>
-			<li> <a href="http://220.180.110.101:8083/videos/live/36/57/hwEHU4UVQ1Iv5/hwEHU4UVQ1Iv5.m3u8" target="_blank">涡阳新闻综合</a></li>
-			<li> <a href="http://39.134.24.166/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226205/index.m3u8" target="_blank">深圳卫视</a></li>
-			<li> <a href="http://live.hnxttv.com:9601/live/dspd/800K/tzwj_video.m3u8" target="_blank">湘潭公共</a></li>
-			<li> <a href="http://live.hnxttv.com:9601/live/xwzh/800K/tzwj_video.m3u8" target="_blank">湘潭新闻综合</a></li>
-			<li> <a href="http://live.cztv.cc:85/live/ggpd.m3u8" target="_blank">漳州新闻综合</a></li> 
-			<li> <a href="https://31182.hlsplay.aodianyun.com/lms_31182/tv_channel_175.m3u8" target="_blank">滁州市广电公共</a></li>
-			<li> <a href="https://hls.gstv.com.cn/49048r/3t5xyc.m3u8" target="_blank">甘肃公共</a></li> 
-			<li> <a href="https://live.sjsrm.com/bjsjs/sd/live.m3u8" target="_blank">石景山电视台</a></li> 
-			<li> <a href="http://live.zohi.tv/video/s10001-fztv-1/index.m3u8" target="_blank">福州广电新闻综合1)</a></li>
-			<li> <a href="http://live.zohi.tv/video/s10001-fztv-3/index.m3u8" target="_blank">福州广电都市生活3)</a></li>
-			<li> <a href="http://live.zohi.tv/video/s10001-fztv-4/index.m3u8" target="_blank">福州电视台少儿</a></li>
-			<li> <a href="http://123.146.162.24:8017/c2F0hmi/1000/live.m3u8" target="_blank">萬州三峽移民</a></li>
-			<li> <a href="http://wanzhoulive.cbg.cn:8017/c2F0hmi/1000/live.m3u8" target="_blank">萬州三峽移民</a></li>
-			<li> <a href="http://wanzhoulive.cbg.cn:8017/d4ceB1a/1000/live.m3u8" target="_blank">萬州影視文藝</a></li>
-			<li> <a href="http://123.146.162.24:8017/d4ceB1a/1000/live.m3u8" target="_blank">萬州影視文藝</a></li> 
-			<li> <a href="http://123.146.162.24:8017/Cz7WPb8/800/live.m3u8" target="_blank">萬州科教</a></li>
-			<li> <a href="http://wanzhoulive.cbg.cn:8017/Cz7WPb8/800/live.m3u8" target="_blank">萬州科教</a></li>
-			<li> <a href="http://123.146.162.24:8017/iTXwrGs/800/live.m3u8" target="_blank">萬州綜合</a></li>
-			<li> <a href="http://wanzhoulive.cbg.cn:8017/iTXwrGs/800/live.m3u8" target="_blank">萬州綜合</a></li>
-			<li> <a href="https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_3360.m3u8" target="_blank">红牛REDBULL TV</a></li>
-			<li> <a href="http://live.dxhmt.cn:9081/tv/11521-1.m3u8" target="_blank">罗山电视台</a></li> 
-			<li> <a href="http://202.69.67.66:443/webcast/bshdlive-mobile/playlist.m3u8" target="_blank">耀才财经</a></li>
-			<li> <a href="http://183.64.181.25:40023/rongchang01.m3u8" target="_blank">荣昌综合</a></li> 
-			<li> <a href="https://l.cztvcloud.com/channels/lantian/SXxiaoshan1/720p.m3u8" target="_blank">萧山新闻综合</a></li> 
-			<li> <a href="http://palive.patv123.com:8091/live/xwpd_800K.m3u8" target="_blank">蓬安新闻综合</a></li> 
-			<li> <a href="https://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8" target="_blank">蕭山生活</a></li> 
-			<li> <a href="http://media.vtibet.com/masvod/HLSLive/9/hanyuTV_q1.m3u8" target="_blank">西藏卫视</a></li>
-			<li> <a href="http://media.vtibet.com/masvod/HLSLive/7/zangyuTV_q1.m3u8" target="_blank">西藏藏語</a></li>
-			<li> <a href="http://221.238.209.44:81/hls/live1.m3u8" target="_blank">西青新闻综合</a></li> 
-			<li> <a href="http://pull.dayuntongzhou.com/live/tztv.m3u8" target="_blank">通州电视台</a></li>
-			<li> <a href="http://hblh.chinashadt.com:2036/live/stream:lh2.stream/playlist.m3u8" target="_blank">隆化影视</a></li>
-			<li> <a href="http://hblh.chinashadt.com:2036/live/stream:lh1.stream/playlist.m3u8" target="_blank">隆化综合</a></li>
-			<li> <a href="http://visit.jjbctv.com:1935/live/xwzhmb/playlist.m3u8" target="_blank">靖江新闻綜合</a></li> 
-			<li> <a href="http://58.222.151.43:1935/live/xwzhpc/playlist.m3u8" target="_blank">靖江新闻綜合</a></li> 
-			<li> <a href="http://visit.jjbctv.com:1935/live/xwzhpc/playlist.m3u8" target="_blank">靖江新闻綜合</a></li>
-			<li> <a href="https://l.cztvcloud.com/channels/lantian/SXyuyao2/720p.m3u8" target="_blank">餘姚姚江文化</a></li> 
-			<li> <a href="https://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/chunklist_w1177047531.m3u8" target="_blank">唯心電視</a></li>
-			<li> <a href="http://live.cztv.cc:85/live/xwpd.m3u8" target="_blank">滁州新闻综合</a></li>
-			<li> <a href="http://202.69.67.66:443/webcast/bshdlive-pc/playlist.m3u8" target="_blank">耀才財經台</a></li>			
-			</ul>			
-			<header><h2></h2></header>
-			<ul>				
-			
+			<li value="http://123.146.162.24:8013/tslslive/PU2vzMI/hls/live_sd.m3u8" title="万州三峡移民">万州三峡移民</li>
+			<li value="http://123.146.162.24:8013/tslslive/noEX9SG/hls/live_sd.m3u8" title="万州综合">万州综合</li>
+			<li value="https://l.cztvcloud.com/channels/lantian/SXshangyu1/720p.m3u8" title="上虞1新闻综合">上虞1新闻综合</li>
+			<li value="https://l.cztvcloud.com/channels/lantian/SXshangyu3/720p.m3u8" title="上虞3新商都">上虞3新商都</li>
+			<li value="https://l.cztvcloud.com/channels/lantian/SXshangyu2/720p.m3u8" title="上虞經濟文化">上虞經濟文化</li>
+			<li value="http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8" title="中国气象">中国气象</li>
+			<li value="https://file.hhtv.cc/cms/videos/nmip-media/channellive/channel1/playlist.m3u8" title="云南红河综合">云南红河综合</li>
+			<li value="http://220.180.110.101:8083/videos/live/39/13/o4ncrHkSp7q09/o4ncrHkSp7q09.m3u8" title="亳州农村">亳州农村</li>
+			<li value="http://220.180.110.101:8083/videos/live/33/59/NC7XQdEveyncq/NC7XQdEveyncq.m3u8" title="亳州新聞">亳州新聞</li>
+			<li value="https://l.cztvcloud.com/channels/lantian/SXyuyao3/720p.m3u8" title="余姚姚江文化">余姚姚江文化</li>
+			<li value="https://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8" title="余姚新闻综合">余姚新闻综合</li>
+			<li value="http://222.178.181.121:12034/beibei01.m3u8" title="北碚综合">北碚综合</li> 
+			<li value="https://live.nbs.cn/channels/njtv/xxpd/m3u8:500k/live.m3u8" title=">南京信息">南京信息</li>
+			<li value="https://live.nbs.cn/channels/njtv/sbpd/m3u8:500k/live.m3u8" title=">南京十八">南京十八</li>
+			<li value="https://live.nbs.cn/channels/njtv/ylpd/m3u8:500k/live.m3u8" title="南京娱乐">南京娱乐</li>
+			<li value="https://stream1.jlntv.cn/fzpd/sd/live.m3u8" title="吉林7">吉林7</li> 
+			<li value="https://stream1.jlntv.cn/xcpd/sd/live.m3u8" title="吉林乡村">吉林乡村</li> 
+			<li value="https://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/playlist.m3u8" title="唯心電視">唯心電視</li>
+			<li value="http://live.dxhmt.cn:9081/tv/10883-1.m3u8" title="孟州电视台">孟州电视台</li>
+			<li value="http://live.ahsz.tv/video/s10001-ggpd/index.m3u8" title="宿州公共">宿州公共</li> 
+			<li value="http://live.ahsz.tv/video/s10001-szzh/index.m3u8" title="宿州新闻综合">宿州新闻综合</li> 
+			<li value="http://live.ahsz.tv/video/s10001-kxjy/index.m3u8" title="宿州科教">宿州科教</li> 
+			<li value="http://live.hnxttv.com:9601/live/dspd/800K/tzwj_video.m3u8?BVUUID=C236454D-5355-2F5F-FA96-1887C72E55CE&auth=654837809071524@615@2E9A5FD0B225B012E3178551CF3754A8" title="岳阳公共">岳阳公共</li>
+			<li value="https://l.cztvcloud.com/channels/lantian/SXshengzhou1/720p.m3u8" title="嵊州综合">嵊州综合</li> 
+			<li value="http://live.ybtvyun.com/video/s10016-7e5f23de35df/index.m3u8" title="延边卫视">延边卫视</li>
+			<li value="http://live.dxhmt.cn:9081/tv/11003-1.m3u8" title="建安电视台">建安电视台</li> 
+			<li value="http://stream.zjjrtv.com/zjjtv1/hd/live.m3u8" title="张家界1">张家界1</li> 
+			<li value="http://stream.zjjrtv.com/zjjtv2/hd/live.m3u8" title="张家界2">张家界2</li> 
+			<li value="https://live.funhillrm.com/2/playlist.m3u8" title="房山电视台">房山电视台</li>
+			<li value="http://.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8" title="文山综合">文山综合</li>
+			<li value="https://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8" title="新昌休闲影视">新昌休闲影视</li> 
+			<li value="https://l.cztvcloud.com/channels/lantian/SXxinchang1/720p.m3u8" title="新昌新聞綜合">新昌新聞綜合</li> 
+			<li value="http://live.xtgdw.cn:1935/live/xtxc/playlist.m3u8" title="新泰乡村党建">新泰乡村党建</li> 
+			<li value="http://111.17.214.4:1935/live/xtys/playlist.m3u8" title="新泰影視">新泰影視</li> 
+			<li value="http://live.xtgdw.cn:1935/live/xtys/playlist.m3u8" title="新泰影視">新泰影視</li> 
+			<li value="http://111.17.214.4:1935/live/xtsh/playlist.m3u8" title="新泰生活">新泰生活</li> 
+			<li value="http://live.xtgdw.cn:1935/live/xtsh/playlist.m3u8" title="新泰生活">新泰生活</li> 
+			<li value="http://111.17.214.4:1935/live/xtzh/playlist.m3u8" title="新泰综合">新泰综合</li>
+			<li value="http://live.xtgdw.cn:1935/live/xtzh/playlist.m3u8" title="新泰综合">新泰综合</li> 
+			<li value="http://111.17.214.4:1935/live/xtxc/playlist.m3u8" title="新泰鄉村黨建">新泰鄉村黨建</li> 
+			<li value="http://live.dxhmt.cn:9081/tv/10184-1.m3u8" title="新郑综合">新郑综合</li> 
+			<li value="http://218.202.220.2:5000/nn_live.ts?id=STARTV" title="星空衛視">星空衛視</li>
+			<li value="http://jzlive.jztvnews.com:90/live/jzgg.m3u8" title="晋中公共">晋中公共</li> 
+			<li value="http://jzlive.jztvnews.com:90/live/jzzh.m3u8" title="晋中综合">晋中综合</li>
+			<li value="http://hbjx.chinashadt.com:1935/live/stream:jx1.stream_360p/playlist.m3u8" title="景县电视一套">景县电视一套</li> 
+			<li value="http://hbjx.chinashadt.com:1935/live/jx1.stream/playlist.m3u8" title="景县电视一套">景县电视一套</li> 
+			<li value="http://stream.appwuhan.com/6tzb/sd/live.m3u8" title="武汉外语">武汉外语</li>
+			<li value="http://stream.appwuhan.com/5tzb/sd/live.m3u8" title="武汉文体">武汉文体</li>
+			<li value="http://stream.appwuhan.com/4tzb/sd/live.m3u8" title="武汉经济">武汉经济</li>
+			<li value="http://222.179.155.21:1935/ch2.m3u8" title="江津文化旅游">江津文化旅游</li>
+			<li value="http://222.179.155.21:1935/ch1.m3u8" title="江津新闻综合">江津新闻综合</li>
+			<li value="http://222.179.155.21:1935/ch0.m3u8" title="江津经济生活">江津经济生活</li>
+			<li value="https://live.lyg1.com/ggpd/sd/live.m3u8" title="江苏连云港公共">江苏连云港公共</li> 
+			<li value="https://live.lyg1.com/zhpd/sd/live.m3u8" title="江苏连云港综合">江苏连云港综合</li> 
+			<li value="http://39.134.24.166/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226200/index.m3u8" title="江苏卫视">江苏卫视</li>
+			<li value="http://hebcx.chinashadt.com:2036/live/10002.stream/playlist.m3u8" title="沧县电视二套">沧县电视二套</li>
+			<li value="http://hebcx.chinashadt.com:2036/live/10001.stream/playlist.m3u8" title="沧县电视综合">沧县电视综合</li>
+			<li value="https://tmpstream.hyrtv.cn/hygg/sd/live.m3u8" title="河源公共">河源公共</li>
+			<li value="https://tmpstream.hyrtv.cn/xwzh/sd/live.m3u8" title="河源综合">河源综合</li>
+			<li value="http://117.172.215.250:8083/videos/live/35/39/GQVbrgob5CGJM/GQVbrgob5CGJM.m3u8" title="洪雅新闻综合">洪雅新闻综合</li>
+			<li value="http://live.shaoxing.com.cn/video/s10001-sxtv3/index.m3u8" title="浙江绍兴影视">浙江绍兴影视</li>
+			<li value="http://live.shaoxing.com.cn/video/s10001-sxtv1/index.m3u8" title="浙江绍兴综合">浙江绍兴综合</li>
+			<li value="http://220.180.110.101:8083/videos/live/36/57/hwEHU4UVQ1Iv5/hwEHU4UVQ1Iv5.m3u8" title="涡阳新闻综合">涡阳新闻综合</li>
+			<li value="http://39.134.24.166/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226205/index.m3u8" title="深圳卫视">深圳卫视</li>
+			<li value="http://live.hnxttv.com:9601/live/dspd/800K/tzwj_video.m3u8" title="湘潭公共">湘潭公共</li>
+			<li value="http://live.hnxttv.com:9601/live/xwzh/800K/tzwj_video.m3u8" title="湘潭新闻综合">湘潭新闻综合</li>
+			<li value="http://live.cztv.cc:85/live/ggpd.m3u8" title="漳州新闻综合">漳州新闻综合</li> 
+			<li value="https://31182.hlsplay.aodianyun.com/lms_31182/tv_channel_175.m3u8" title="滁州市广电公共">滁州市广电公共</li>
+			<li value="https://hls.gstv.com.cn/49048r/3t5xyc.m3u8" title="甘肃公共">甘肃公共</li> 
+			<li value="https://live.sjsrm.com/bjsjs/sd/live.m3u8" title="石景山电视台">石景山电视台</li> 
+			<li value="http://live.zohi.tv/video/s10001-fztv-1/index.m3u8" title="福州广电新闻综合1)">福州广电新闻综合1)</li>
+			<li value="http://live.zohi.tv/video/s10001-fztv-3/index.m3u8" title="福州广电都市生活3)">福州广电都市生活3)</li>
+			<li value="http://live.zohi.tv/video/s10001-fztv-4/index.m3u8" title="福州电视台少儿">福州电视台少儿</li>
+			<li value="http://123.146.162.24:8017/c2F0hmi/1000/live.m3u8" title="萬州三峽移民">萬州三峽移民</li>
+			<li value="http://wanzhoulive.cbg.cn:8017/c2F0hmi/1000/live.m3u8" title="萬州三峽移民">萬州三峽移民</li>
+			<li value="http://wanzhoulive.cbg.cn:8017/d4ceB1a/1000/live.m3u8" title="萬州影視文藝">萬州影視文藝</li>
+			<li value="http://123.146.162.24:8017/d4ceB1a/1000/live.m3u8" title="萬州影視文藝">萬州影視文藝</li> 
+			<li value="http://123.146.162.24:8017/Cz7WPb8/800/live.m3u8" title="萬州科教">萬州科教</li>
+			<li value="http://wanzhoulive.cbg.cn:8017/Cz7WPb8/800/live.m3u8" title="萬州科教">萬州科教</li>
+			<li value="http://123.146.162.24:8017/iTXwrGs/800/live.m3u8" title="萬州綜合">萬州綜合</li>
+			<li value="http://wanzhoulive.cbg.cn:8017/iTXwrGs/800/live.m3u8" title="萬州綜合">萬州綜合</li>
+			<li value="https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_3360.m3u8" title="红牛REDBULL TV">红牛REDBULL TV</li>
+			<li value="http://live.dxhmt.cn:9081/tv/11521-1.m3u8" title="罗山电视台">罗山电视台</li> 
+			<li value="http://202.69.67.66:443/webcast/bshdlive-mobile/playlist.m3u8" title="耀才财经">耀才财经</li>
+			<li value="http://183.64.181.25:40023/rongchang01.m3u8" title="荣昌综合">荣昌综合</li> 
+			<li value="https://l.cztvcloud.com/channels/lantian/SXxiaoshan1/720p.m3u8" title="萧山新闻综合">萧山新闻综合</li> 
+			<li value="http://palive.patv123.com:8091/live/xwpd_800K.m3u8" title="蓬安新闻综合">蓬安新闻综合</li> 
+			<li value="https://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8" title="蕭山生活">蕭山生活</li> 
+			<li value="http://media.vtibet.com/masvod/HLSLive/9/hanyuTV_q1.m3u8" title="西藏卫视">西藏卫视</li>
+			<li value="http://media.vtibet.com/masvod/HLSLive/7/zangyuTV_q1.m3u8" title="西藏藏語">西藏藏語</li>
+			<li value="http://221.238.209.44:81/hls/live1.m3u8" title="西青新闻综合">西青新闻综合</li> 
+			<li value="http://pull.dayuntongzhou.com/live/tztv.m3u8" title="通州电视台">通州电视台</li>
+			<li value="http://hblh.chinashadt.com:2036/live/stream:lh2.stream/playlist.m3u8" title="隆化影视">隆化影视</li>
+			<li value="http://hblh.chinashadt.com:2036/live/stream:lh1.stream/playlist.m3u8" title="隆化综合">隆化综合</li>
+			<li value="http://visit.jjbctv.com:1935/live/xwzhmb/playlist.m3u8" title="靖江新闻綜合">靖江新闻綜合</li> 
+			<li value="http://58.222.151.43:1935/live/xwzhpc/playlist.m3u8" title="靖江新闻綜合">靖江新闻綜合</li> 
+			<li value="http://visit.jjbctv.com:1935/live/xwzhpc/playlist.m3u8" title="靖江新闻綜合">靖江新闻綜合</li>
+			<li value="https://l.cztvcloud.com/channels/lantian/SXyuyao2/720p.m3u8" title="餘姚姚江文化">餘姚姚江文化</li> 
+			<li value="https://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/chunklist_w1177047531.m3u8" title="唯心電視">唯心電視</li>
+			<li value="http://live.cztv.cc:85/live/xwpd.m3u8" title="滁州新闻综合">滁州新闻综合</li>
+			<li value="http://202.69.67.66:443/webcast/bshdlive-pc/playlist.m3u8" title="耀才財經台">耀才財經台</li>			
 			</ul>
 			
-
-		</aside>		
+			
+				<!--<button title="展开播放列表" id="playList-show"> > </button>-->
+				<button title="收起播放列表" id="playList-hidden"> < </button>
+		</aside><button title="展开播放列表" id="playList-show1"> > </button>			
 	</div>
+<script>
+		window.onload = function(){
+	
+	var video = document.getElementById("video");
+	var lis = document.getElementsByTagName("li");
+	var vLen = lis.length; // 播放列表的长度
+	var url = [];
+	var ctrl = document.getElementById("playList-hidden");
+	var ctrl_show = document.getElementById('playList-show1');
+	var aside = document.getElementById("playList");
+	var curr = 1; // 当前播放的视频
+	
+	for(var i=0;i<lis.length;i++){
+		
+			url[i] = lis[i].getAttribute("value");
+			
+	}
+	
+	//绑定单击事件
+	for(var i=0;i<lis.length;i++){
+		
+			lis[i].onclick = function(){
+				for(var j=0;j<lis.length;j++){
+					if(lis[j] == this){
+						video.setAttribute("src",this.getAttribute("value"));
+						video.setAttribute('autoplay','autoplay');
+						this.innerHTML = ''+this.innerHTML;//'palying'
+						this.className = "select";
+						curr = j+1;
+					}else{
+						lis[j].innerHTML = lis[j].getAttribute("title");
+						lis[j].className = "";
+					}
+				}
+				
+			
+//			console.log(this.getAttribute("value"));  //调试代码
+		}
+			
+	}	
+	
+	//收起播放列表
+	ctrl.onclick = function(){
+		
+		aside.style.transition = "1s";
+		aside.style.transform = "translateX(-10vw)";
+		setTimeout(function(){
+			aside.style.display = "none";
+			ctrl_show.style.visibility= 'visible';
+		},"1000");
+	
+	}
+	
+	//展开播放列表
+	ctrl_show.onclick = function(){
+		aside.style.display = "block";
+		ctrl_show.style.visibility= 'hidden';
+		setTimeout(function(){
+			aside.style.transform = "translateX(0vw)";
+		},"0");
+	
+	}
 
+	video.setAttribute('src',url[0]);
+	lis[0].innerHTML =' ' +lis[0].innerHTML;//'palying '
+	lis[0].className = "select";
+	
+	
+	
+	video.addEventListener('ended', play);
+	//play();
+	function play() {
+	   video.src = url[curr];
+	   video.load(); // 如果短的话，可以加载完成之后再播放，监听 canplaythrough 事件即可
+	   video.play();
+	   
+	   for(var j=0;j<lis.length;j++){
+			if(j == curr){
+				video.setAttribute("src",lis[j].getAttribute("value"));
+				video.setAttribute('autoplay','autoplay');
+				lis[j].innerHTML = 'palying '+lis[j].innerHTML;
+				lis[j].className = "select";
+			}else{
+				lis[j].innerHTML = lis[j].getAttribute("title");
+				lis[j].className = "";
+			}
+		}
+	   curr++;
+	   if (curr >= vLen) curr = 0; // 播放完了，重新播放
+	}
+	
+}
+
+</script>
 </body>
 </html>
